@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?> <!-- 객체로 생성해주는것 IOC컨테이너에 넣어주는 것 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="calculator" class="com.java.www.Calculator" />
+	<bean id="myCal" class="com.java.www.MyCal">
+		<property name="calculator"> <!--  -->
+			<ref bean="calculator"/> <!-- bean에 등록된 객체를 가져옴 -->
+		</property>
+		<property name="firstNum" value="10" />
+		<property name="secondNum" value="2" />
+	</bean>
+</beans>
